@@ -1,0 +1,17 @@
+{
+  "name": "ES6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack", 
+    "start": "webpack-dev-server --output-public-path=/build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^3.3.7"
+  }
+}
