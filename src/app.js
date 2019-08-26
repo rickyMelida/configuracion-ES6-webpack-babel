@@ -59,8 +59,66 @@ const persona = ['Ricardo Melida', 27, 'Paraguay'];
 
 //Destructuramos el arreglo, asignandole variables a cada elemento
 //Tambien se puede agregar alguna variable que no esta en el arreglo
-const [nombre, , pais, futura_profesion='No especificado'] = persona;
+//const [nombre, , pais, futura_profesion='No especificado'] = persona;
 
-const mostrarInfo = ([nombre, ,pais, otro='otro'] = persona) => console.log(nombre, pais, otro);
+//const mostrarInfo = ([nombre, ,pais, otro='otro'] = persona) => console.log(nombre, pais, otro);
 
-mostrarInfo(persona);
+//mostrarInfo(persona);
+
+
+//Creamos un objeto
+const usuario = {
+    nombre: 'Ricardo',
+    correo: 'ricardomelida92@gmail.com',
+    edad: 27,
+    pais: 'Paraguay',
+    //profesion: 'Desarrollador web'
+}
+
+
+//Destructuramos el objeto usuario
+//La ventaja es que podemos extraer los datos que necesitamos, independientemente de la ubicacion que este
+//tambien le podemos agregar un elemento que no esta en el objeto
+const {nombre, profesion='No especificado'} = usuario;
+
+
+
+
+/*-------Todo esto lo resmimos en una sola linea
+    const mostrarInfo = ( { nombre, profesion='Estudiante' } ) => {
+        console.log(`${nombre} es ${profesion}`); 
+    }*/
+
+
+//const mostrarInfo = ( { nombre, profesion='Estudiante' } ) => console.log(`${nombre} es ${profesion}`);
+
+//mostrarInfo(usuario);
+
+
+
+
+/*-----------------------------Video 11 - Trabajando con objetos------------------------*/
+
+const crearObjeto = (nombre, edad) => {
+    return {
+        nombre: nombre,
+        edad: edad,
+        mostrarInfo: () => {
+            return `${nombre} tiene ${edad} años`;
+        }
+    }
+
+}
+
+//Forma reducida de declarar objetos
+crearNuevoObjeto = (nombre, edad) => {
+    return {
+        nombre,
+        edad,
+        mostrarInfo() {
+            return `${nombre} tiene ${edad} años`;            
+        }
+    }
+}
+
+console.log(crearNuevoObjeto('Ricardo', 27).mostrarInfo());
